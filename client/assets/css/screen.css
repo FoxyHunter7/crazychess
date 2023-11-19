@@ -132,22 +132,14 @@ Player 2 Details Section
     justify-content: flex-start;
     flex-flow: row-reverse wrap;
 }
-
-.highlight {
-    background-color: var(--highlightColor);
-}
-
 /* ==========
-POP-UP Menus
+Popup Menus Shared
 ========== */
-.flexContainer {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
+#settingsMenu, #infoMenu {
+    text-align: center;
 }
 
-#settingsMenu article, #infoMenu article, #setupMenu article, #gameOverMenu article {
+#settingsMenu article, #infoMenu article, #gameOverMenu article {
     flex: 0 0 80%;
     margin-top: 7rem;
     padding: 2rem;
@@ -157,34 +149,79 @@ POP-UP Menus
     z-index: 10;
 }
 
-#settingsMenu h2, #infoMenu h2, #setupMenu h2, #gameOverMenu h2 {
+#settingsMenu h2, #infoMenu h2, #gameOverMenu h2 {
     font-size: 2rem;
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
-    text-align: center;
     margin-bottom: 1rem;
 }
 
-#settingsMenu h3, #infoMenu h3, #setupMenu h3, #gameOverMenu h3 {
+#settingsMenu h3, #infoMenu h3, #gameOverMenu h3 {
     font-size: 1.3rem;
     text-transform: uppercase;
     text-decoration: underline;
     font-family: 'Press Start 2P', cursive;
-    text-align: center;
     margin-top: 3rem;
 }
 
-#infoMenu p, #settingsMenu p {
-    text-align: center;
+#infoMenu a, #settingsMenu a {
+    text-decoration: underline;
+    color: var(--linkColor);
 }
 
+/* ==========
+Settings Menu
+========== */
+#settingsMenu form {
+    margin-top: 3rem;
+}
+
+#settingsMenu fieldset {
+    padding: 1rem;
+}
+
+#settingsMenu form legend {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#settingsMenu form input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+#settingsMenu form label {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+#settingsMenu form label:hover {
+    background-color: var(--highlightColor);
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+#settingsMenu form input[type="radio"]:checked + label {
+    background-color: var(--highlightColor);
+    border-radius: 0.2rem;
+}
+
+/* ==========
+Info Menu
+========== */
+
 #infoMenu dl {
-    text-align: center;
     margin: 1.5rem 0 3rem 0;
 }
 
 #infoMenu dt {
-    text-align: center;
     margin-top: 1.5rem;
     text-transform: uppercase;
     font-weight: bold;
@@ -237,79 +274,9 @@ POP-UP Menus
     font-family: chess-magnetic, sans-serif;
 }
 
-#infoMenu a, #settingsMenu a {
-    text-decoration: underline;
-    color: var(--linkColor);
-}
-
-#setupMenu form {
-    margin-top: 2rem;
-}
-
-#setupMenu form fieldset {
-    margin-bottom: 3.5rem;
-}
-
-#setupMenu form #usernames {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto 3.5rem auto;
-}
-
-#setupMenu form #usernames input {
-    width: 20rem;
-    margin: 0.5rem auto 1rem auto;
-}
-
-#setupMenu form legend {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-}
-
-#setupMenu p {
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    color: #fc0000;
-}
-
-#overlay {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.hidden {
-    visibility: hidden;
-    display: none;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-#setupMenu, #settingsMenu #infoMenu {
-    text-align: center;
-}
-
-#setupMenu button {
-    color: var(--textColor);
-    text-transform: uppercase;
-    text-align: center;
-    background-color: var(--buttonColor);
-    border: 0.2rem solid #fff;
-    border-radius: 0.4rem;
-    padding: 1rem 1.5rem;
-    font-family: 'Press Start 2P', cursive;
-}
-
-#setupMenu button:hover {
-    cursor: pointer;
-}
-
+/* ==========
+Game Over Menu
+========== */
 #gameOverMenu article div {
     display: flex;
     justify-content: space-evenly;
@@ -345,9 +312,39 @@ POP-UP Menus
     flex-flow: row wrap;
 }
 
-/* ------------------------- */
-/* PATCHES */
-/* ------------------------- */
+/* ==========
+Reusables
+========== */
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.flexContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.highlight {
+    background-color: var(--highlightColor);
+}
+
+#overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ==========
+Patches
+========== */
 /* MS-Edge - spelling correction plugin
 Caused "ghost" width which exceeded the viewport by injecting additional html in the SetupMenu form.*/
 editor-squiggler {
