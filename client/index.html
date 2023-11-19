@@ -2,12 +2,176 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Matthias Vancoillie">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- SEO -->
+    <title>CrazyChess</title>
+    <link rel="icon" type="image/x-icon" href="">
+    <meta name="description" content="A wild version of chess, with tons of fun game modes to play! Passion project by Matthias Vancoillie.">
+    <meta name="keywords" content=""> <!-- Seperated by comments -->
+
+    <!-- Open Graph Meta -->
+    <meta property="og:image" content="">
+    <meta property="og:title" content="CrazyChess"/>
+    <meta property="og:description" content="A wild version of chess, with tons of fun game modes to play!"/>
+    <meta property="og:url" content="https://crazychess.serverfox.be"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/chessFonts.css">
+    <link rel="stylesheet" href="assets/css/themes/default/theme.css">
+    <link rel="stylesheet" href="assets/css/screen.css">
+
+    <!-- JS -->
     <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
     <script src="assets/js/srcipt.js" type="module"></script>
+
+    <!-- G-FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap"
+          rel="stylesheet">
 </head>
 <body>
-    
+<main>
+    <section class="playerSection" id="player1Info">
+        <a href="#"><img src="images/info.png" title="info" alt="info"></a>
+        <div class="stats">
+            <h2 class="highlight">Player 1 - <span></span></h2>
+            <p>Total moves</p>
+            <p class="totalMoves">0</p>
+            <p>Taken pieces</p>
+            <ul class="totalTaken"></ul>
+            <p></p>
+        </div>
+    </section>
+    <section id="playArea">
+        <h1>Crazy chess - beta v4.01</h1>
+        <h2>Made by Matthias V.</h2>
+        <div id="board"></div>
+    </section>
+    <section class="playerSection" id="player2Info">
+        <a href="#"><img src="images/settings.png" title="settings" alt="settings"></a>
+        <div class="stats">
+            <h2><span></span> - Player 2</h2>
+            <p>Total moves</p>
+            <p class="totalMoves">0</p>
+            <p>Taken pieces</p>
+            <ul class="totalTaken"></ul>
+        </div>
+    </section>
+
+    <div class="flexContainer hidden" id="settingsMenu">
+        <article>
+            <h2>• Settings Menu •</h2>
+            <form name="settings" method="post">
+                <fieldset>
+                    <legend>Theme</legend>
+                    <input type="radio" id="default" name="theme" checked>
+                    <label for="default">Default</label>
+                    <input type="radio" id="sunsetPurple" name="theme">
+                    <label for="sunsetPurple">Sunset Purple</label>
+                    <input type="radio" id="oceanBlue" name="theme">
+                    <label for="oceanBlue">Ocean Blue</label>
+                    <input type="radio" id="monochrome" name="theme">
+                    <label for="monochrome">Monochrome</label>
+                </fieldset>
+            </form>
+        </article>
+    </div>
+    <div class="flexContainer hidden" id="infoMenu">
+        <article>
+            <h2>• Information Menu •</h2>
+            <p>This is a passion project which I intend to fully polish over the years.</p>
+            <p>Currently the game is in its early stages, and much of the functionally it still being coded in.</p>
+            <div>
+                <div>
+                    <h3>Gamemodes</h3>
+                    <dl>
+                        <dt>Normal</dt>
+                        <dd>regular chess as you know it.</dd>
+                        <dt>Tiny</dt>
+                        <dd>A tiny 4x4 chess field.</dd>
+                        <dt>DroppingTiles</dt>
+                        <dd>The chessboard has become unstable, be careful as tiles will start falling of the board.<br>The king is the only one who cannot fall :)</dd>
+                    </dl>
+                </div>
+                <div>
+                    <h3>Pieces Styles</h3>
+                    <dl>
+                        <dt>Standard</dt>
+                        <dd><span class="standard">p o n m b v r t q w k l</span></dd>
+                        <dt>Adventurer</dt>
+                        <dd><span class="adventurer">p o n m b v r t q w k l</span></dd>
+                        <dt>Mark</dt>
+                        <dd><span class="mark">p o n m b v r t q w k l</span></dd>
+                        <dt>Condal</dt>
+                        <dd><span class="condal">p o n m b v r t q w k l</span></dd>
+                        <dt>Kingdom</dt>
+                        <dd><span class="kingdom">p o n m b v r t q w k l</span></dd>
+                        <dt>magnetic</dt>
+                        <dd><span class="magnetic">p o n m b v r t q w k l</span></dd>
+                    </dl>
+                </div>
+            </div>
+            <p>For suggestions you can always contact me at: <a href="mailto:matthias.vancoillie@outlook.com">matthias.vancoillie@outlook.com</a></p>
+        </article>
+    </div>
+    <div class="flexContainer" id="setupMenu">
+        <article>
+            <h2>• Setup Menu •</h2>
+            <p></p>
+            <form name="config" method="post">
+                <fieldset>
+                    <legend>Game mode</legend>
+                    <input type="radio" id="normal" name="gameMode" checked>
+                    <label for="normal">Normal</label>
+                    <input type="radio" id="tiny" name="gameMode">
+                    <label for="tiny">tiny</label>
+                    <input type="radio" id="droppingTiles" name="gameMode">
+                    <label for="droppingTiles">droppingTiles</label>
+                    <input type="radio" id="testMode" name="gameMode">
+                    <label for="testMode">testMode</label>
+                    <input type="radio" id="debug" name="gameMode">
+                    <label for="debug">debug</label>
+                </fieldset>
+                <fieldset id="usernames">
+                    <legend>usernames</legend>
+                    <label for="p1Username">Player1:</label>
+                    <input type="text" id="p1Username" name="p1Username">
+                    <label for="p2Username">Player2:</label>
+                    <input type="text" id="p2Username" name="p2Username">
+                </fieldset>
+                <fieldset>
+                    <legend>pieces style</legend>
+                    <input type="radio" id="cases" name="chessFont" checked>
+                    <label for="cases">Standard</label>
+                    <input type="radio" id="adventurer" name="chessFont">
+                    <label for="adventurer">adventurer</label>
+                    <input type="radio" id="mark" name="chessFont">
+                    <label for="mark">mark</label>
+                    <input type="radio" id="condal" name="chessFont">
+                    <label for="condal">condal</label>
+                    <input type="radio" id="kingdom" name="chessFont">
+                    <label for="kingdom">kingdom</label>
+                    <input type="radio" id="magnetic" name="chessFont">
+                    <label for="magnetic">magnetic</label>
+                </fieldset>
+                <button type="submit">Start game!</button>
+            </form>
+        </article>
+    </div>
+    <div class="flexContainer hidden" id="gameOverMenu">
+        <article>
+            <h2>• SOMEONE WON •</h2>
+            <div>
+
+            </div>
+        </article>
+    </div>
+
+    <div class="" id="overlay"></div>
+</main>
 </body>
 </html>

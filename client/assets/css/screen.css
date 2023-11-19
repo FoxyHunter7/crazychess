@@ -1,0 +1,357 @@
+body {
+    background-color: var(--mainColor);
+    color: var(--textColor);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* ==========
+General Layout
+========== */
+main {
+    display: flex;
+}
+
+main section {
+    height: 100vh;
+}
+
+#playArea {
+    flex: 1 1 55%;
+    display: flex;
+    flex-flow: column;
+}
+
+/* ==========
+General Section Layout
+========== */
+main section h1 {
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 3.5rem;
+}
+main section h2 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0.3rem;
+}
+section a img {
+    max-width: 100%;
+    width: 2.5rem;
+    padding: 1rem 0 2.7rem 0;
+}
+
+section .totalMoves {
+    margin-bottom: 2rem;
+}
+
+section div.stats {
+    margin: auto 0;
+    height: 70vh;
+}
+
+section .totalTaken li {
+    width: 3rem;
+    height: 3rem;
+    font-family: var(--font);
+    font-size: 3rem;
+}
+
+section:nth-of-type(odd) {
+    display: flex;
+    flex-flow: column;
+    padding: 0 2rem 0 2rem;
+}
+
+section:nth-of-type(odd) h2 {
+    font-size: 2rem;
+}
+
+section:nth-of-type(odd) p {
+    margin-top: 0.5rem;
+}
+
+/* ==========
+Player 1 Details Section
+========== */
+#player1Info {
+    flex: 1 1 22.5%
+}
+
+#player1Info, #player1Info h2 {
+    text-align: left;
+}
+
+#player1Info .stats h2 span {
+    color: var(--player1Color);
+}
+
+#player1Info a {
+    display: inline-block;
+    align-self: flex-start;
+    z-index: 10;
+}
+
+#player1Info .totalTaken {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+}
+
+/* ==========
+Player 2 Details Section
+========== */
+#player2Info {
+    flex: 1 1 22.5%;
+}
+
+#player2Info, #player2Info h2 {
+    text-align: right;
+}
+
+#player2Info .stats h2 span {
+    color: var(--player2Color);
+}
+
+#player2Info a {
+    display: inline-block;
+    align-self: flex-end;
+    z-index: 10;
+}
+
+#player2Info .totalTaken {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row-reverse wrap;
+}
+
+.highlight {
+    background-color: var(--highlightColor);
+}
+
+/* ==========
+POP-UP Menus
+========== */
+.flexContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+#settingsMenu article, #infoMenu article, #setupMenu article, #gameOverMenu article {
+    flex: 0 0 80%;
+    margin-top: 7rem;
+    padding: 2rem;
+    background: var(--mainColor);
+    border: rgba(255, 255, 255, 0.9) solid 0.3rem;
+    border-radius: 0.5rem;
+    z-index: 10;
+}
+
+#settingsMenu h2, #infoMenu h2, #setupMenu h2, #gameOverMenu h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#settingsMenu h3, #infoMenu h3, #setupMenu h3, #gameOverMenu h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+#infoMenu p, #settingsMenu p {
+    text-align: center;
+}
+
+#infoMenu dl {
+    text-align: center;
+    margin: 1.5rem 0 3rem 0;
+}
+
+#infoMenu dt {
+    text-align: center;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+#infoMenu dd {
+    margin-top: 0.5rem;
+}
+
+#infoMenu article > div {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+#infoMenu article > div div {
+    flex: 1 1 20rem;
+    margin: 0 1rem 0 1rem;
+}
+
+#infoMenu span {
+    font-size: 1.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#infoMenu span.standard {
+    font-family: chess-cases, sans-serif;
+}
+
+#infoMenu span.adventurer {
+    font-family: chess-adventurer, sans-serif;
+}
+
+#infoMenu span.mark {
+    font-family: chess-mark, sans-serif;
+}
+
+#infoMenu span.condal {
+    font-family: chess-condal, sans-serif;
+}
+
+#infoMenu span.kingdom {
+    font-family: chess-kingdom, sans-serif;
+}
+
+#infoMenu span.magnetic {
+    font-family: chess-magnetic, sans-serif;
+}
+
+#infoMenu a, #settingsMenu a {
+    text-decoration: underline;
+    color: var(--linkColor);
+}
+
+#setupMenu form {
+    margin-top: 2rem;
+}
+
+#setupMenu form fieldset {
+    margin-bottom: 3.5rem;
+}
+
+#setupMenu form #usernames {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 3.5rem auto;
+}
+
+#setupMenu form #usernames input {
+    width: 20rem;
+    margin: 0.5rem auto 1rem auto;
+}
+
+#setupMenu form legend {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+#setupMenu p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #fc0000;
+}
+
+#overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+#setupMenu, #settingsMenu #infoMenu {
+    text-align: center;
+}
+
+#setupMenu button {
+    color: var(--textColor);
+    text-transform: uppercase;
+    text-align: center;
+    background-color: var(--buttonColor);
+    border: 0.2rem solid #fff;
+    border-radius: 0.4rem;
+    padding: 1rem 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#setupMenu button:hover {
+    cursor: pointer;
+}
+
+#gameOverMenu article div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#gameOverMenu article div section {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+#gameOverMenu h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+#gameOverMenu p {
+    margin-top: 0.5rem;
+}
+
+#gameOverMenu span.p0 {
+    color: var(--player1Color);
+}
+
+#gameOverMenu span.p1 {
+    color: var(--player2Color);
+}
+
+#gameOverMenu ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* ------------------------- */
+/* PATCHES */
+/* ------------------------- */
+/* MS-Edge - spelling correction plugin
+Caused "ghost" width which exceeded the viewport by injecting additional html in the SetupMenu form.*/
+editor-squiggler {
+    width: 0;
+    display: none;
+    visibility: collapse;
+}

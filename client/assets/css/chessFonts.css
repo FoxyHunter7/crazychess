@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'chess-adventurer';
+    src: url("../fonts/adventur/AVENFONT.TTF") format('truetype');
+}
+@font-face {
+    font-family: 'chess-cases';
+    src: url("../fonts/cases/CASEFONT.TTF") format('truetype');
+}
+@font-face {
+    font-family: 'chess-mark';
+    src: url("../fonts/chesmark/MARKFONT.TTF") format('truetype');
+}
+@font-face {
+    font-family: 'chess-condal';
+    src: url("../fonts/condal/CONDFONT.TTF") format('truetype');
+}
+@font-face {
+    font-family: 'chess-kingdom';
+    src: url("../fonts/kingdom/KINGFONT.TTF") format('truetype');
+}
+@font-face {
+    font-family: 'chess-magnetic';
+    src: url("../fonts/magnetic/MAGNFONT.TTF") format('truetype');
+}
