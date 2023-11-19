@@ -1,0 +1,11 @@
+:root {
+    --mainColor: #363636;
+    --player1Color: #A8A7A7;
+    --player2Color: #000 ;
+    --textColor: white;
+    --highlightColor: #474747;
+    --lightTilesColor: #fff;
+    --darkTilesColor: #5b5b5b;
+    --linkColor: #b7b7b7;
+    --buttonColor: #000000;
+}
