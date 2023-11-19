@@ -38,7 +38,7 @@
     <section class="playerSection" id="player1Info">
         <a href="#"><img src="images/info.png" title="info" alt="info"></a>
         <div class="stats">
-            <h2 class="highlight">Player 1 - <span></span></h2>
+            <h2 class="highlight">anonymous</h2>
             <p>Total moves</p>
             <p class="totalMoves">0</p>
             <p>Taken pieces</p>
@@ -47,14 +47,14 @@
         </div>
     </section>
     <section id="playArea">
-        <h1>Crazy chess - beta v4.01</h1>
+        <h1>Crazy chess - beta v4.02</h1>
         <h2>Made by Matthias V.</h2>
         <div id="board"></div>
     </section>
     <section class="playerSection" id="player2Info">
         <a href="#"><img src="images/settings.png" title="settings" alt="settings"></a>
         <div class="stats">
-            <h2><span></span> - Player 2</h2>
+            <h2>anonymous</h2>
             <p>Total moves</p>
             <p class="totalMoves">0</p>
             <p>Taken pieces</p>
@@ -115,51 +115,7 @@
                     </dl>
                 </div>
             </div>
-            <p>For suggestions you can always contact me at: <a href="mailto:matthias.vancoillie@outlook.com">matthias.vancoillie@outlook.com</a></p>
-        </article>
-    </div>
-    <div class="flexContainer" id="setupMenu">
-        <article>
-            <h2>• Setup Menu •</h2>
-            <p></p>
-            <form name="config" method="post">
-                <fieldset>
-                    <legend>Game mode</legend>
-                    <input type="radio" id="normal" name="gameMode" checked>
-                    <label for="normal">Normal</label>
-                    <input type="radio" id="tiny" name="gameMode">
-                    <label for="tiny">tiny</label>
-                    <input type="radio" id="droppingTiles" name="gameMode">
-                    <label for="droppingTiles">droppingTiles</label>
-                    <input type="radio" id="testMode" name="gameMode">
-                    <label for="testMode">testMode</label>
-                    <input type="radio" id="debug" name="gameMode">
-                    <label for="debug">debug</label>
-                </fieldset>
-                <fieldset id="usernames">
-                    <legend>usernames</legend>
-                    <label for="p1Username">Player1:</label>
-                    <input type="text" id="p1Username" name="p1Username">
-                    <label for="p2Username">Player2:</label>
-                    <input type="text" id="p2Username" name="p2Username">
-                </fieldset>
-                <fieldset>
-                    <legend>pieces style</legend>
-                    <input type="radio" id="cases" name="chessFont" checked>
-                    <label for="cases">Standard</label>
-                    <input type="radio" id="adventurer" name="chessFont">
-                    <label for="adventurer">adventurer</label>
-                    <input type="radio" id="mark" name="chessFont">
-                    <label for="mark">mark</label>
-                    <input type="radio" id="condal" name="chessFont">
-                    <label for="condal">condal</label>
-                    <input type="radio" id="kingdom" name="chessFont">
-                    <label for="kingdom">kingdom</label>
-                    <input type="radio" id="magnetic" name="chessFont">
-                    <label for="magnetic">magnetic</label>
-                </fieldset>
-                <button type="submit">Start game!</button>
-            </form>
+            <p>For suggestions you can always contact me at: <a href="mailto:crazychess@serverfox.be">crazychess@serverfox.be</a></p>
         </article>
     </div>
     <div class="flexContainer hidden" id="gameOverMenu">
@@ -171,7 +127,7 @@
         </article>
     </div>
 
-    <div class="" id="overlay"></div>
+    <div class="hidden" id="overlay"></div>
 </main>
 </body>
 </html>

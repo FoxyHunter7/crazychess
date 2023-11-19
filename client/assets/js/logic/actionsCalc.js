@@ -19,7 +19,6 @@ function calcPossibleActions(library, originPos) {
 }
 
 function calcMovesActions(library, originPos) {
-    
 }
 
 function calcTakesActions(library, originPos) {
