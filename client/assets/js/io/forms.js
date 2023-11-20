@@ -1,3 +1,6 @@
+import { saveToLocalStorage } from "../data/dataStore.js";
+import { setTheme } from "../ui.js";
+
 function formsHandler() {
     const $settingsForm = document.querySelector(`#settingsMenu form[name="settings"]`);
     $settingsForm.addEventListener("change", themeChanger);
@@ -6,10 +9,11 @@ function formsHandler() {
 
 function themeChanger(e) {
     e.preventDefault();
-    const theme = document.querySelector(`#settingsMenu input[name="theme"]:checked`).id
-    const $themeCSSLink = document.querySelector("#themeLink");
+    const theme = document.querySelector(`#settingsMenu input[name="theme"]:checked`).id;
 
-    $themeCSSLink.setAttribute("href", `assets/css/themes/${theme}/theme.css`);
+    setTheme(theme);
+    saveToLocalStorage("theme", theme);
 }
+
 
 export { formsHandler };
