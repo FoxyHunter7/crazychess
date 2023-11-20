@@ -169,6 +169,30 @@ Popup Menus Shared
     color: var(--linkColor);
 }
 
+#infoMenu span.standard, #settingsMenu form label span.standard {
+    font-family: chess-cases, sans-serif;
+}
+
+#infoMenu span.adventurer, #settingsMenu form label span.adventurer {
+    font-family: chess-adventurer, sans-serif;
+}
+
+#infoMenu span.mark, #settingsMenu form label span.mark {
+    font-family: chess-mark, sans-serif;
+}
+
+#infoMenu span.condal, #settingsMenu form label span.condal {
+    font-family: chess-condal, sans-serif;
+}
+
+#infoMenu span.kingdom, #settingsMenu form label span.kingdom {
+    font-family: chess-kingdom, sans-serif;
+}
+
+#infoMenu span.magnetic,#settingsMenu form label span.magnetic {
+    font-family: chess-magnetic, sans-serif;
+}
+
 /* ==========
 Settings Menu
 ========== */
@@ -178,6 +202,10 @@ Settings Menu
 
 #settingsMenu fieldset {
     padding: 1rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 #settingsMenu form legend {
@@ -200,6 +228,14 @@ Settings Menu
     display: inline-block;
     margin-top: 0.5rem;
     padding: 0.5rem;
+}
+
+#settingsMenu form label span {
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #settingsMenu form label:hover {
@@ -248,30 +284,6 @@ Info Menu
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-}
-
-#infoMenu span.standard {
-    font-family: chess-cases, sans-serif;
-}
-
-#infoMenu span.adventurer {
-    font-family: chess-adventurer, sans-serif;
-}
-
-#infoMenu span.mark {
-    font-family: chess-mark, sans-serif;
-}
-
-#infoMenu span.condal {
-    font-family: chess-condal, sans-serif;
-}
-
-#infoMenu span.kingdom {
-    font-family: chess-kingdom, sans-serif;
-}
-
-#infoMenu span.magnetic {
-    font-family: chess-magnetic, sans-serif;
 }
 
 /* ==========

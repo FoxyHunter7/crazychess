@@ -10,4 +10,16 @@ function setTheme(theme) {
     }
 }
 
-export { setTheme };
+function setChessFont(chessFont) {
+    const $board = document.querySelector("#board");
+    $board.classList.add(chessFont);
+
+    const $checkedChessFont = document.querySelector(`#settingsMenu input[name="chess-pieces"]:checked`);
+
+    if (chessFont !== $checkedChessFont.id) {
+        $checkedChessFont.setAttribute("checked", false);
+        document.querySelector(`form #${chessFont}`).setAttribute("checked", true);
+    }
+}
+
+export { setTheme, setChessFont };
